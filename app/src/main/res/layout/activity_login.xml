@@ -18,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@id/sign_in_button"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:text="Welcome to your to-do app"
+        android:text="@string/welcome_text"
         />
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"

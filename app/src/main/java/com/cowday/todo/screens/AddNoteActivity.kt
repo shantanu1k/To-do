@@ -20,6 +20,7 @@ class AddNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
         user = FirebaseAuth.getInstance().currentUser!!
         fStore = FirebaseFirestore.getInstance()
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
         binding.saveTheNote.setOnClickListener {
             val newNote = binding.editText.text
             if(newNote.isEmpty()){

@@ -1,5 +1,6 @@
 package com.cowday.todo.adapter
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -23,9 +24,16 @@ class NoteAdapter(getNotes: FirestoreRecyclerOptions<Note>,val listener: OnItemC
         val noteCard = itemView.findViewById<CardView>(R.id.note_card)
         val deleteButton = itemView.findViewById<ImageView>(R.id.delete_button)
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_note,parent,false)
         return NoteViewHolder(itemView)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onDataChanged() {
+        super.onDataChanged()
+        notifyDataSetChanged()
     }
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int, model: Note) {
         holder.note.text = model.note
