@@ -2,10 +2,8 @@ package com.cowday.todo
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cowday.todo.adapter.NoteAdapter
@@ -13,13 +11,11 @@ import com.cowday.todo.data.Note
 import com.cowday.todo.databinding.ActivityMainBinding
 import com.cowday.todo.screens.AddNoteActivity
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-
 
 class MainActivity : AppCompatActivity(),NoteAdapter.OnItemClickListener{
     private lateinit var binding: ActivityMainBinding
@@ -43,7 +39,6 @@ class MainActivity : AppCompatActivity(),NoteAdapter.OnItemClickListener{
         noteAdapter = NoteAdapter(getNotes,this)
         recyclerView.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         recyclerView.adapter = noteAdapter
-//        recyclerView.setHasFixedSize(true)
         binding.addNewNote.setOnClickListener {
             val i = Intent(this,AddNoteActivity::class.java)
             startActivity(i)
@@ -59,6 +54,7 @@ class MainActivity : AppCompatActivity(),NoteAdapter.OnItemClickListener{
         if(item.itemId == R.id.sign_out){
             auth.signOut()
             val logoutIntent = Intent(this,LoginActivity::class.java)
+            //User cannot go back to main page after signing out
             logoutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(logoutIntent)
 
@@ -77,6 +73,7 @@ class MainActivity : AppCompatActivity(),NoteAdapter.OnItemClickListener{
     }
 
     override fun onDelete(doc: DocumentSnapshot, position: Int) {
+        //Position should never be -1
         if(position!=-1){
             doc.reference.delete()
         }

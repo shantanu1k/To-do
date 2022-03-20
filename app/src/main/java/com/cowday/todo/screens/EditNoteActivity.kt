@@ -17,10 +17,12 @@ class EditNoteActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityEditNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         user = FirebaseAuth.getInstance().currentUser!!
         fStore = FirebaseFirestore.getInstance()
         val prevText = intent?.extras?.getString("content")
         val id = intent?.extras?.getString("id")
+        //Setting the editText as the recently saved note
         binding.editText.setText(prevText)
         binding.updateButton.setOnClickListener {
             val updateNote = binding.editText.text

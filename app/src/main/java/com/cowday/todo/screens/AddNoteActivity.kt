@@ -33,6 +33,7 @@ class AddNoteActivity : AppCompatActivity() {
             val documentReference: DocumentReference = fStore.collection("notes").document(user.uid).collection("userNotes").document()
             documentReference.set(map).addOnSuccessListener {
                 Toast.makeText(this, "Note saved!", Toast.LENGTH_SHORT).show()
+                //Taking user to main screen just after saving the note
                 onBackPressed()
             }
             documentReference.set(map).addOnFailureListener {

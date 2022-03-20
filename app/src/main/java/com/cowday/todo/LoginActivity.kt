@@ -40,8 +40,6 @@ class LoginActivity : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == GOOGLE_SIGN_IN_RC) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
@@ -57,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
+        //Saving user from authenticating every time he/she opens the app.
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
