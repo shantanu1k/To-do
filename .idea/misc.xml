@@ -11,6 +11,12 @@
         <entry key="..\:/Androidapps/ToDo/app/src/main/res/layout/item_note.xml" value="0.25" />
         <entry key="..\:/Androidapps/ToDo/app/src/main/res/menu/app_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/Androidapps/ToDo/app/src/main/res/menu/note_menu.xml" value="0.2" />
+        <entry key="..\:/projects/To-do/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.166" />
+        <entry key="..\:/projects/To-do/app/src/main/res/layout/activity_add_note.xml" value="0.25" />
+        <entry key="..\:/projects/To-do/app/src/main/res/layout/activity_edit_note.xml" value="0.25" />
+        <entry key="..\:/projects/To-do/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/projects/To-do/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/projects/To-do/app/src/main/res/layout/item_note.xml" value="0.25" />
       </map>
     </option>
   </component>

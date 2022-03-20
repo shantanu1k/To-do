@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:padding="16dp"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".screens.EditNoteActivity">
 
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/default_text_color"
         android:background="@null"
         android:hint="Add your note"
         app:layout_constraintTop_toTopOf="parent"
