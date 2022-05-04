@@ -1,5 +1,4 @@
 # To-do
-<b>Android assignment for Groww</b>
 
 <b>Insights:</b>
 * Google sign-in
